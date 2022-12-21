@@ -32,8 +32,8 @@ create table MEMBERS(
     FirstName varchar2(100),
     CampusAddress varchar2(100),
     CampusPhone varchar2(100),
-    CampusID NUMBER(5),
-    PositionID NUMBER(5),
+    CampusID NUMBER(5) NOT NULL,
+    PositionID NUMBER(5) NOT NULL,
     ContractDuration NUMBER,
     
     CONSTRAINT members_pk PRIMARY KEY(MemberID),
@@ -53,7 +53,7 @@ Create table  PRICES(
 Create table FOODITEMS(
     FoodItemID NUMBER(5)DEFAULT FOODITEMS_FOODITEMID_SEQ.nextval NOT NULL,
     FoodItemName varchar2(100),
-    FoodItemTypeID NUMBER(5),
+    FoodItemTypeID NUMBER(5) NOT NULL,
     
     CONSTRAINT foodItems_pk PRIMARY KEY(FoodItemID),
     CONSTRAINT prices_fk FOREIGN KEY(FoodItemTypeID) REFERENCES PRICES(FoodItemTypeID)
@@ -61,7 +61,7 @@ Create table FOODITEMS(
 
 Create table ORDERS(
     OrderID NUMBER(5) DEFAULT ORDERS_ORDERID_SEQ.nextval NOT NULL,
-    MemberID NUMBER(5),
+    MemberID NUMBER(5) NOT NULL,
     OrderDate varchar2(25),
     
     CONSTRAINT orders_pk PRIMARY KEY(OrderID),
@@ -69,8 +69,8 @@ Create table ORDERS(
 );
 
 Create table ORDERLINE(
-    OrderID NUMBER(5),
-    FoodItemID NUMBER(5),
+    OrderID NUMBER(5) NOT NULL,
+    FoodItemID NUMBER(5) NOT NULL,
     Quantity NUMBER,
     
     CONSTRAINT orderLine_pk PRIMARY KEY(OrderID, FoodItemID),
