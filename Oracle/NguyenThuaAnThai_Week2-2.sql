@@ -231,13 +231,13 @@ SELECT CONSTRAINT_NAME
                         WHERE owner='MYDB');
 
 --bai2
-SELECT table_name
-    FROM all_tables
-    WHERE owner='MYDB'
-    ORDER BY table_name;
+SELECT TABLE_NAME
+    FROM ALL_TABLES
+    WHERE OWNER='MYDB'
+    ORDER BY TABLE_NAME;
     
 --bai3
-SELECT SEQUENCE_NAME from user_sequences;
+SELECT SEQUENCE_NAME FROM USER_SEQUENCES;
 
 -- bai4
 SELECT FirstName, LastName, Position,CampusName, YearlyMemberShipFee/12 as Monthy_Dues
