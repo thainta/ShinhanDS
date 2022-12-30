@@ -120,14 +120,17 @@ END;
 -- BAI 7
 CREATE OR REPLACE PROCEDURE update_sal
     AS
+        year_diff DECIMAL(7,2);
     BEGIN
+    
     FOR EMP IN (SELECT * FROM EMPLOYEES)
         LOOP
-            IF((months_between(SYSDATE, EMP.HIRE_DATE) /12) > 2) THEN
+            year_diff := (months_between(SYSDATE, EMP.HIRE_DATE) /12);
+            IF(year_diff > 2) THEN
                 UPDATE EMPLOYEES SET SALARY = SALARY + 200  WHERE EMPLOYEE_ID = EMP.EMPLOYEE_ID;
-            ELSIF ((months_between(SYSDATE, EMP.HIRE_DATE) /12) > 1) THEN
+            ELSIF (year_diff > 1) THEN
                 UPDATE EMPLOYEES SET SALARY = SALARY + 100  WHERE EMPLOYEE_ID = EMP.EMPLOYEE_ID;
-            ELSIF ((months_between(SYSDATE, EMP.HIRE_DATE) /12) = 1) THEN
+            ELSIF (year_diff = 1) THEN
                 UPDATE EMPLOYEES SET SALARY = SALARY + 50  WHERE EMPLOYEE_ID = EMP.EMPLOYEE_ID;
             END IF;
         END LOOP;
