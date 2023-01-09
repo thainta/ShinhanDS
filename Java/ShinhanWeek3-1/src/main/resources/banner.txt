@@ -1,11 +1,14 @@
-  ****   ****
- ****** ******
-***************
-***************
- *************
-  ***********
-   *********
-    *******
-     *****
-      ***
-       *
+          v v v v v   v v v v v
+        v v v v v v v v v v v v v
+      v v v v v v v v v v v v v v v
+      v v v v v v v v v v v v v v v
+      v v v v v v v v v v v v v v v
+      v v v v v v K H Ó y v v v v v
+      v v v v v v v v v v v v v v v
+        v v v v v v v v v v v v v
+          v v v v v v v v v v v
+            v v v v v v v v v
+              v v v v v v v
+                v v v v v
+                  v v v
+                    v
