@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class DemoServiceImpl implements DemoService {
     @Autowired
-    DemoRepository demoRepository;
+    private DemoRepository demoRepository;
 
     public String getDemoStr(){
         return demoRepository.getStr();
